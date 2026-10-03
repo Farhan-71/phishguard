@@ -1,0 +1,29 @@
+body { width: 380px; min-height: 120px; }
+main { padding: 14px 16px 16px; }
+.top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+.brand { font: 700 13px var(--serif); color: var(--brand); letter-spacing: .01em; }
+.addr { font-size: 18px; }
+.verdict { display: flex; align-items: baseline; gap: 10px; margin-top: 14px; }
+.score { font: 700 46px/1 var(--serif); color: var(--lvl); }
+.score small { font-size: 16px; color: var(--muted); font-weight: 400; }
+.label { font: 600 16px var(--serif); color: var(--lvl); }
+.summary { margin: 0; color: var(--ink); }
+.checks { list-style: none; margin: 12px 0 0; padding: 0; border-top: 1px solid var(--rule); }
+.checks li { display: grid; grid-template-columns: 20px 1fr; gap: 6px; padding: 6px 0; border-bottom: 1px solid var(--rule); }
+.checks .g { font-weight: 700; text-align: center; }
+.g.pass { color: var(--low); } .g.warn { color: var(--med); } .g.fail { color: var(--high); } .g.unknown, .g.info { color: var(--muted); }
+.checks .d { color: var(--muted); font-size: 12.5px; display: block; }
+h2 { font: 700 14px var(--serif); margin: 16px 0 6px; }
+.ind { margin: 0; padding: 0; list-style: none; }
+.ind li { border-left: 3px solid var(--rule); padding: 2px 0 2px 10px; margin: 0 0 8px; }
+.ind li.s-high { border-color: var(--high); } .ind li.s-medium { border-color: var(--med); } .ind li.s-low { border-color: var(--muted); }
+.ind .t { font-weight: 600; } .ind .src { color: var(--muted); font-size: 12px; } .ind .dd { display: block; color: var(--muted); font-size: 12.5px; }
+.actions { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.details { margin-top: 12px; padding: 10px 12px; background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; font-size: 12.5px; }
+.details dl { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; margin: 0 0 8px; }
+.details dt { color: var(--muted); } .details dd { margin: 0; overflow-wrap: anywhere; }
+.foot { margin-top: 14px; display: flex; gap: 14px; font-size: 12.5px; }
+.err { padding: 12px; border: 1px solid var(--rule); border-left: 4px solid var(--med); background: var(--panel); border-radius: 4px; }
+.err p { margin: 4px 0 10px; }
+.toast { margin-top: 10px; color: var(--low); font-size: 12.5px; }
+.na { color: var(--muted); }

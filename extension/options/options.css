@@ -1,0 +1,21 @@
+main { max-width: 560px; margin: 0 auto; padding: 48px 24px; }
+h1 { font: 700 30px var(--serif); margin: 0 0 8px; color: var(--brand); }
+.lead { color: var(--muted); margin: 0 0 28px; }
+.field { margin-bottom: 20px; }
+.field > label { display: block; font-weight: 600; margin-bottom: 4px; }
+.field input[type=url], .field input[type=password] { width: 100%; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 6px; background: var(--panel); }
+.field.check { display: grid; grid-template-columns: 20px 1fr; gap: 2px 8px; align-items: baseline; }
+.field.check .hint { grid-column: 2; }
+.hint { color: var(--muted); font-size: 12.5px; margin: 4px 0 0; }
+.actions { display: flex; gap: 10px; margin-top: 8px; }
+.btn.primary { --lvl: var(--brand); color: var(--brand-ink); }
+#status { margin-top: 16px; min-height: 1.4em; }
+#status.ok { color: var(--low); } #status.bad { color: var(--high); }
+
+h2 { font: 700 24px var(--serif); margin: 32px 0 16px; color: var(--brand); }
+.trusted-list { list-style: none; padding: 0; margin: 0; }
+.trusted-item { display: flex; justify-content: space-between; align-items: center; padding: 12px; border: 1px solid var(--rule); border-radius: 6px; margin-bottom: 8px; background: var(--panel); }
+.trusted-item span { font-family: monospace; font-size: 14px; word-break: break-all; }
+.btn.danger { color: var(--high); border: 1px solid var(--high); }
+.btn.danger:hover { background: var(--high); color: var(--paper); }
+.btn.sm { padding: 4px 10px; font-size: 13px; min-width: 0; }

@@ -1,0 +1,56 @@
+{
+  "valid": [
+    {
+      "input": "https://www.google.com/search?q=secret&hl=en#frag",
+      "expected": "https://www.google.com/search?q=&hl="
+    },
+    {
+      "input": "http://user:pass@example.com:8080/a/b?token=abc",
+      "expected": "http://user@example.com:8080/a/b?token="
+    },
+    {
+      "input": "HTTPS://Example.COM",
+      "expected": "https://example.com/"
+    },
+    {
+      "input": "https://example.com:443/x",
+      "expected": "https://example.com/x"
+    },
+    {
+      "input": "http://example.com:80/",
+      "expected": "http://example.com/"
+    },
+    {
+      "input": "https://example.com/path?flag",
+      "expected": "https://example.com/path?flag"
+    },
+    {
+      "input": "https://bücher.de/x",
+      "expected": "https://xn--bcher-kva.de/x"
+    },
+    {
+      "input": "http://example.com/a%20b?x=1&&y=2",
+      "expected": "http://example.com/a%20b?x=&y="
+    },
+    {
+      "input": "https://example.com/?",
+      "expected": "https://example.com/"
+    },
+    {
+      "input": "https://example.com/a?b=c=d&e=%40",
+      "expected": "https://example.com/a?b=&e="
+    },
+    {
+      "input": "http://192.168.1.5:8080/login.php",
+      "expected": "http://192.168.1.5:8080/login.php"
+    }
+  ],
+  "invalid": [
+    "javascript:alert(1)",
+    "ftp://example.com/",
+    "http://",
+    "",
+    "chrome://settings",
+    "data:text/html,hi"
+  ]
+}

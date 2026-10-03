@@ -1,0 +1,189 @@
+{
+  "model_version": "20260920-random_forest",
+  "benign_dev": {
+    "n": 89,
+    "false_positive_rate@0.5": 0.056179775280898875,
+    "share_at_or_above_0.3": 0.06741573033707865,
+    "median_probability": 0.05150995057236534,
+    "worst": [
+      {
+        "url": "https://username.github.io/project-docs/",
+        "p": 0.68
+      },
+      {
+        "url": "https://www.facebook.com/help/1216349518398524",
+        "p": 0.62
+      },
+      {
+        "url": "https://someproject.netlify.app/",
+        "p": 0.598
+      },
+      {
+        "url": "https://na4.docusign.net/Signing/EmailStart.aspx?a=&etti=",
+        "p": 0.594
+      },
+      {
+        "url": "http://example.org/index.html",
+        "p": 0.516
+      },
+      {
+        "url": "https://us02web.zoom.us/j/12345678901?pwd=",
+        "p": 0.365
+      },
+      {
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API",
+        "p": 0.239
+      },
+      {
+        "url": "https://support.apple.com/en-us/HT201994",
+        "p": 0.226
+      }
+    ]
+  },
+  "benign_holdout": {
+    "n": 79,
+    "false_positive_rate@0.5": 0.10126582278481013,
+    "share_at_or_above_0.3": 0.1518987341772152,
+    "median_probability": 0.05111936367285524,
+    "worst": [
+      {
+        "url": "https://my-portfolio-site.netlify.app/",
+        "p": 0.99
+      },
+      {
+        "url": "https://janedoe.github.io/",
+        "p": 0.936
+      },
+      {
+        "url": "http://192.168.0.1/",
+        "p": 0.821
+      },
+      {
+        "url": "https://www.pinterest.com/pin/123456789012345678/",
+        "p": 0.772
+      },
+      {
+        "url": "https://www.aliexpress.com/item/1005001234567890.html",
+        "p": 0.72
+      },
+      {
+        "url": "http://localhost:3000/login",
+        "p": 0.647
+      },
+      {
+        "url": "https://www.sciencedirect.com/science/article/pii/S0167404820301176",
+        "p": 0.615
+      },
+      {
+        "url": "https://iforgot.apple.com/password/verify/appleid",
+        "p": 0.542
+      }
+    ]
+  },
+  "pipeline": {
+    "benign_dev": {
+      "n": 89,
+      "prevalence_setting": 0.3,
+      "share_medium_or_high": 0.0,
+      "share_high": 0.0
+    },
+    "benign_holdout": {
+      "n": 77,
+      "prevalence_setting": 0.3,
+      "share_medium_or_high": 0.05194805194805195,
+      "share_high": 0.0
+    },
+    "phishing_dev": {
+      "n": 150,
+      "prevalence_setting": 0.3,
+      "share_medium_or_high": 0.6,
+      "share_high": 0.31333333333333335
+    },
+    "phishing_holdout": {
+      "n": 150,
+      "prevalence_setting": 0.3,
+      "share_medium_or_high": 0.4866666666666667,
+      "share_high": 0.2
+    }
+  },
+  "phishing_dev": {
+    "n": 150,
+    "recall@0.5": 0.66,
+    "recall@0.3": 0.7,
+    "median_probability": 0.8254714434876829,
+    "lowest_scored": [
+      {
+        "url": "https://www.telstra23.blogspot.com/",
+        "p": 0.03
+      },
+      {
+        "url": "http://www.androidguias.com/restaurar-copia-seguridad-whatsapp/",
+        "p": 0.037
+      },
+      {
+        "url": "https://fersaweb.com/d/?error=&error_description=",
+        "p": 0.037
+      },
+      {
+        "url": "https://www.metoretonoris.vercel.app/",
+        "p": 0.041
+      },
+      {
+        "url": "https://imtokex.im/",
+        "p": 0.041
+      },
+      {
+        "url": "http://envio.whf.bz/ap7/finalboss/tana/corr.php",
+        "p": 0.05
+      },
+      {
+        "url": "https://gurl.pro/wwwrobloxcom-users-41741956-profile",
+        "p": 0.054
+      },
+      {
+        "url": "http://fortgrind.com/",
+        "p": 0.062
+      }
+    ]
+  },
+  "phishing_holdout": {
+    "n": 150,
+    "recall@0.5": 0.5466666666666666,
+    "recall@0.3": 0.72,
+    "median_probability": 0.5869426363747419,
+    "lowest_scored": [
+      {
+        "url": "https://www.r0blox-rbx.blogspot.com/",
+        "p": 0.029
+      },
+      {
+        "url": "https://app.qyrox.my/s/o4dD7k",
+        "p": 0.036
+      },
+      {
+        "url": "https://lxxbjx.com/",
+        "p": 0.039
+      },
+      {
+        "url": "https://www.rima-rouge.vercel.app/",
+        "p": 0.04
+      },
+      {
+        "url": "http://trezorwollet.webador.com/",
+        "p": 0.043
+      },
+      {
+        "url": "https://tokenim.win/",
+        "p": 0.048
+      },
+      {
+        "url": "https://www.shopeeonline01.blogspot.com/",
+        "p": 0.049
+      },
+      {
+        "url": "https://tezeriosaetrt.gitbook.io/",
+        "p": 0.054
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Warning: suspected phishing site</title>
+  <link rel="stylesheet" href="../shared/theme.css">
+  <link rel="stylesheet" href="warning.css">
+</head>
+<body class="lvl-high">
+  <main>
+    <p class="brand">PhishGuard</p>
+    <h1>This site looks like phishing</h1>
+    <p class="addr" id="addr"></p>
+    <p class="lead" id="lead">Sites like this try to steal passwords, card numbers and personal details. PhishGuard stopped the page from loading.</p>
+    <div class="why" id="why"></div>
+    <div class="actions">
+      <button class="btn primary" id="leave">Leave website</button>
+      <button class="btn" id="analysis" aria-expanded="false">View analysis</button>
+    </div>
+    <section id="details" hidden></section>
+    <p class="proceed"><button class="btn link" id="proceed">I understand the risk, continue to the site</button></p>
+  </main>
+  <script type="module" src="warning.js"></script>
+</body>
+</html>

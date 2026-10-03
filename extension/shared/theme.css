@@ -1,0 +1,35 @@
+/* PhishGuard design tokens. System fonts only: extension pages cannot load remote fonts. */
+:root {
+  --paper: #F3F6F4; --panel: #FFFFFF; --ink: #14262B; --muted: #566B70; --rule: #D3DEDB;
+  --brand: #0E4F5C; --brand-ink: #FFFFFF;
+  --low: #2F7D5B; --low-bg: #E7F2EC; --med: #96610A; --med-bg: #FBF3E0; --high: #B3372B; --high-bg: #FBEDEA;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0F1B1E; --panel: #16262A; --ink: #E6EFEC; --muted: #93A8AC; --rule: #2A3E42;
+    --brand: #5FB3C4; --brand-ink: #0F1B1E;
+    --low: #5CC08F; --low-bg: #16302A; --med: #E0A63C; --med-bg: #33290F; --high: #F0857A; --high-bg: #3A1B18;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 14px/1.45 var(--sans); }
+button, select, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.addr { font-weight: 700; overflow-wrap: anywhere; line-height: 1.25; }
+.addr .rest { font-weight: 400; color: var(--muted); }
+.lvl-low { --lvl: var(--low); --lvl-bg: var(--low-bg); }
+.lvl-medium { --lvl: var(--med); --lvl-bg: var(--med-bg); }
+.lvl-high { --lvl: var(--high); --lvl-bg: var(--high-bg); }
+.ruler { position: relative; height: 10px; border-radius: 5px; margin: 14px 0 18px; overflow: visible;
+  background: linear-gradient(90deg, var(--low-bg) 0 30%, var(--med-bg) 30% 60%, var(--high-bg) 60% 100%);
+  box-shadow: inset 0 0 0 1px var(--rule); }
+.ruler .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 5px 0 0 5px; background: var(--lvl); opacity: .85; }
+.ruler .mark { position: absolute; top: -4px; width: 4px; height: 18px; margin-left: -2px; background: var(--ink); border-radius: 2px; }
+.ruler .tick { position: absolute; top: 14px; font-size: 11px; color: var(--muted); transform: translateX(-50%); }
+.btn { border: 1px solid var(--ink); background: transparent; border-radius: 6px; padding: 7px 12px; }
+.btn.primary { background: var(--lvl, var(--brand)); border-color: var(--lvl, var(--brand)); color: #fff; font-weight: 600; }
+.btn.link { border: 0; padding: 2px 0; color: var(--brand); text-decoration: underline; text-underline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

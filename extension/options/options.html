@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhishGuard options</title>
+  <link rel="stylesheet" href="../shared/theme.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>PhishGuard options</h1>
+    <p class="lead">PhishGuard sends each page's address (with query values and fragments removed) to your detection service, which scores it. Local and private addresses are never sent.</p>
+    <div class="field">
+      <label for="apiBase">Detection service address</label>
+      <input id="apiBase" type="url" placeholder="http://127.0.0.1:8000" autocomplete="off">
+      <p class="hint">Use HTTPS for anything that isn't on this computer.</p>
+    </div>
+    <div class="field">
+      <label for="apiKey">Scan API key</label>
+      <input id="apiKey" type="password" autocomplete="off" spellcheck="false">
+      <p class="hint">Use a scan-only key, never an administrator key. Anyone with access to this browser profile can read it.</p>
+    </div>
+    <div class="field check"><input id="blockHigh" type="checkbox"><label for="blockHigh">Stop high-risk pages with a warning page</label></div>
+    <div class="field check"><input id="banner" type="checkbox"><label for="banner">Show a warning bar on suspicious pages</label>
+      <p class="hint">Needs permission to run on all sites, which your browser will ask you to confirm. The bar only checks whether the page has a password field.</p></div>
+    <div class="actions">
+      <button class="btn primary" id="save">Save changes</button>
+      <button class="btn" id="test">Test connection</button>
+    </div>
+    <p id="status" role="status"></p>
+
+    <h2>Trusted Sites</h2>
+    <p class="lead">You have chosen to bypass the warning for these high-risk sites. They will not be blocked.</p>
+    <ul id="trustedList" class="trusted-list"></ul>
+    <p id="noTrustedSites" class="hint" style="display: none;">No trusted sites yet.</p>
+
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

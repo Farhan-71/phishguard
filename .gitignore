@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Env / secrets
+.env
+
+# Database
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# ML artifacts (reproducible via `python -m ml.training.train`; commit metrics.json
+# and the .sha256 if you want a tracked baseline, but not the dataset or model binary)
+ml/dataset/data/
+ml/models/*.joblib
+ml/models/test_predictions.csv
+
+# Node / extension
+extension/node_modules/
+extension/package-lock.json
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
