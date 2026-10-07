@@ -2,7 +2,9 @@
 // anything stored in an extension can be read by its user, so it must never be an admin key.
 
 export const DEFAULTS = {
-  apiBase: "http://127.0.0.1:8000",
+  // Update this to your deployed Render URL once live (e.g., https://phishguard-api.onrender.com)
+  // For local development, change back to "http://127.0.0.1:8000"
+  apiBase: "https://your-phishguard-api.onrender.com",
   apiKey: "",
   blockHigh: true,   // show an interstitial for high-risk pages
   banner: false,     // opt-in in-page warning bar (needs an extra permission)
@@ -39,6 +41,12 @@ async function call(cfg, path, { method = "GET", body } = {}) {
     return await res.json();
   } catch (e) {
     if (e instanceof ApiError) throw e;
+
+    // Telemetry hook: Log unexpected network/timeout failures
+    const errType = e.name === "AbortError" ? "timeout" : "network_failure";
+    console.warn(`[Telemetry] API Error (${errType}) targeting ${path}:`, e.message);
+    // TODO (Task 3.2): Push this error to Sentry if configured.
+
     throw new ApiError("network", e.name === "AbortError" ? "The detection service timed out" : "Could not reach the detection service");
   } finally {
     clearTimeout(timer);

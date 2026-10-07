@@ -51,6 +51,11 @@ async function assess(tabId, url, qualifiers = []) {
       await set(cacheKey, { at: Date.now(), result });
     } catch (e) {
       const err = e instanceof ApiError ? e : new ApiError("network", "Scan failed");
+
+      // Telemetry hook: Record fail-open event
+      console.warn(`[Telemetry] Fail-open triggered for tab ${tabId} due to: ${err.code}`);
+      // TODO (Task 3.2): Push metric to Sentry/LogRocket.
+
       await set(`res:${tabId}`, { error: { code: err.code, message: err.message }, url: clean, at: Date.now() });
       setBadge(tabId, "error");
       return null; // fail open: never block browsing because the service is down

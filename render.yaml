@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: phishguard-api
+    env: docker
+    plan: free
+    region: ohio
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PHISHGUARD_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: phishguard-db
+          property: connectionString
+      # Auto-generate secure 32-character API keys on first deploy
+      - key: PHISHGUARD_SCAN_KEYS
+        generateValue: true
+      - key: PHISHGUARD_ADMIN_KEYS
+        generateValue: true
+      # Auto-generate a secure salt for log hashing
+      - key: PHISHGUARD_LOG_SALT
+        generateValue: true
+
+  - type: psql
+    name: phishguard-db
+    plan: free
+    region: ohio
+    databaseName: phishguard
+    user: phishguard_user
