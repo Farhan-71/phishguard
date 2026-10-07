@@ -22,6 +22,14 @@ def make_engine(url: str) -> Engine:
             cur.execute("PRAGMA journal_mode=WAL")
             cur.close()
         return engine
+
+    # Fix for Render/Heroku injecting `postgres://` or standard `postgresql://`
+    # instead of the specific `postgresql+psycopg://` required by SQLAlchemy 2.0+
+    if url.startswith("postgres://"):
+        url = url.replace("postgres://", "postgresql+psycopg://", 1)
+    elif url.startswith("postgresql://"):
+        url = url.replace("postgresql://", "postgresql+psycopg://", 1)
+
     return create_engine(url, pool_pre_ping=True, pool_size=10, max_overflow=20)
 
 
