@@ -21,8 +21,8 @@ services:
       - key: PHISHGUARD_LOG_SALT
         generateValue: true
 
-  - type: psql
-    name: phishguard-db
+databases:
+  - name: phishguard-db
     plan: free
     region: ohio
     databaseName: phishguard
